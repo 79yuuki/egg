@@ -99,8 +99,7 @@ window.addEventListener("load", function () {
       if ( gv.x > 17 && once) {
         once = false;
         s.emit('throw', {x: gv.x, y: gv.y});
-        $('canvas').animate({ 'margin-top': '-999px'}, 'fast');
-        setTimeout(location.reload(), 3000);
+        $('canvas').animate({ 'margin-top': '-999px'}, 'fast', location.reload());
       }
     }
   });
