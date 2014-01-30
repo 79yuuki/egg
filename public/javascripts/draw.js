@@ -62,6 +62,7 @@ window.addEventListener("load", function () {
         getCircleData(function(err, top, height){
            // drawEgg({ x: top.y, y: -top.x }, height);
            vibe(top, height);
+$('canvas').animate({ 'margin-top': '-999px'});
         });
         throwFlag = true;
       }
