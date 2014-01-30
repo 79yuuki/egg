@@ -226,6 +226,7 @@ window.addEventListener("load", function () {
 
       // console.log(i, xx[i], yy[i]);
     }
+    c.fillStyle ='#FFFFFF';
     c.fill();
 
   }
