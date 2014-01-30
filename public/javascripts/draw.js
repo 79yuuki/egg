@@ -100,16 +100,10 @@ window.addEventListener("load", function () {
         once = false;
         s.emit('throw', {x: gv.x, y: gv.y});
         $('canvas').animate({ 'margin-top': '-999px'}, 'fast');
-        throwEgg();
+        location.reload();
       }
     }
   });
-
-  // function throwEgg(){
-  //   if (throwFlag) {
-  //     $('#canvas').
-  //   }
-  // }
 
   function crossCheck(oldPos, newPos) {
     for (var i = 0; i < lineLocus.length; i++) {
