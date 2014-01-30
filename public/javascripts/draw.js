@@ -22,7 +22,7 @@ window.addEventListener("load", function () {
   // CanvasとContextを初期化する
   canvas.width = w;
   canvas.height = h;
-  c.strokeStyle = "#000000";
+  c.strokeStyle = "#FFF";
   c.lineWidth = 10;
   c.lineJoin = "round";
   c.lineCap = "round";
@@ -226,6 +226,7 @@ window.addEventListener("load", function () {
 
       // console.log(i, xx[i], yy[i]);
     }
+    c.fill();
 
   }
 
