@@ -1,6 +1,6 @@
 /* global $ */
-//var socket = io.connect('http://nodestudy.herokuapp.com');
-var socket = io.connect('http://192.168.10.6:3000/');
+var socket = io.connect('http://bapa-egg.herokuapp.com');
+//var socket = io.connect('http://192.168.10.6:3000/');
 var s = socket.of('/socket');
 s.on('connect', function() {
     console.log("conneted!!");
