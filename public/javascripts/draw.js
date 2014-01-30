@@ -22,8 +22,8 @@ window.addEventListener("load", function () {
   // CanvasとContextを初期化する
   canvas.width = w;
   canvas.height = h;
-  c.strokeStyle = "#FFF";
-  c.lineWidth = 10;
+  c.strokeStyle = "#AAA";
+  c.lineWidth = 6;
   c.lineJoin = "round";
   c.lineCap = "round";
 
@@ -124,10 +124,10 @@ window.addEventListener("load", function () {
         c.x = p1.x + (((p3.x - p1.x) * s1) / (s1 + s2));
         c.y = p1.y + (((p3.y - p1.y) * s1) / (s1 + s2));
 
-        if ((c.x >= p1.x && c.x < p3.x) || (c.x >= p3.x && c.x < p1.x)){
-          if ((c.y >= p1.y && c.y < p3.y) || (c.y >= p3.y && c.y < p1.y)) {
-            if ((c.x >= p2.x && c.x < p4.x) || (c.x >= p4.x && c.x < p2.x)) {
-              if ((c.y >= p2.y && c.y < p4.y) || (c.y >= p4.y && c.y < p2.y)) {
+        if ((c.x >= p1.x && c.x < p3.x) || (c.x > p3.x && c.x <= p1.x)){
+          if ((c.y >= p1.y && c.y <= p3.y) || (c.y >= p3.y && c.y <= p1.y)) {
+            if ((c.x >= p2.x && c.x < p4.x) || (c.x > p4.x && c.x <= p2.x)) {
+              if ((c.y >= p2.y && c.y <= p4.y) || (c.y >= p4.y && c.y <= p2.y)) {
                 return true;
               }
             }
@@ -219,18 +219,15 @@ window.addEventListener("load", function () {
     c.rotate(90 * Math.PI / 180);
     for (i = 1; i <= 2 * imax; i++) {
       c.beginPath();
+      c.fillStyle = '#FFFFFF';
+      c.fill();
       c.moveTo(xx[i]+startPoint.x, yy[i]+startPoint.y);
       c.lineTo(xx[i+1]+startPoint.x, yy[i+1]+startPoint.y);
       c.stroke();
       c.closePath();
-
-      // console.log(i, xx[i], yy[i]);
     }
-    c.fillStyle ='#FFFFFF';
-    c.fill();
 
   }
-
 
 
 
