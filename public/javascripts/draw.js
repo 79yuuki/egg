@@ -99,7 +99,7 @@ window.addEventListener("load", function () {
       if ( gv.x > 30 && once) {
         once = false;
         s.emit('throw', {x: gv.x, y: gv.y});
-        $('canvas').animate({ 'margin-top': '-999px'});
+        $('canvas').animate({ 'margin-top': '-999px'}, 'fast');
         throwEgg();
       }
     }
