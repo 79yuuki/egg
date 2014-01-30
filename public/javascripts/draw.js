@@ -100,7 +100,7 @@ window.addEventListener("load", function () {
         once = false;
         s.emit('throw', {x: gv.x, y: gv.y});
         $('canvas').animate({ 'margin-top': '-999px'}, 'fast');
-        setTimeout(location.reload(), 1500);
+        setTimeout(location.reload(), 3000);
       }
     }
   });
