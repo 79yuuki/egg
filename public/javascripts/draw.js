@@ -100,6 +100,7 @@ window.addEventListener("load", function () {
         once = false;
         s.emit('throw', {x: gv.x, y: gv.y});
         throwEgg();
+        $('canvas').animate({ 'margin-top': '-999px'});
       }
     }
   });
