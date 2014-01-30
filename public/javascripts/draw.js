@@ -96,7 +96,7 @@ window.addEventListener("load", function () {
   window.addEventListener('devicemotion', function(event) {
     if (throwFlag) {
       var gv = event.accelerationIncludingGravity;
-      if ( gv.x > 27 && once) {
+      if ( gv.x > 22 && once) {
         once = false;
         s.emit('throw', {x: gv.x, y: gv.y});
         $('canvas').animate({ 'margin-top': '-999px'}, 'fast');
