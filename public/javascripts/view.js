@@ -177,11 +177,14 @@ console.log(images);
         } else {
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, hitHeight + (tick - hitTick), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
+          if ((hitTick / (tick - hitTick) * 1.2) - 0.5 <= 0) {
+            clearTimeout(time);
+          }
         }
         i++;
         tick++;
       };
-      setTimeout(function(){
+      var time = setTimeout(function(){
         setTimeout("clearInterval('"+setInterval(animation,40)+"')",9000);
       },0);
     // });
