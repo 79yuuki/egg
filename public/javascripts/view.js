@@ -144,11 +144,10 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
 
   function drawYoroshiku(){
     c.font = "20px sans-serif";
-    c.fillText('＼よろしくお願い致します！／', w/2-130, h/2 - 100);
+    c.fillText('＼よろしくお願い致します！／', w/2-120, h/2 - 90);
   }
 
   function throwEgg(egg){
-    // loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
       images = [eggPosiImg, arcImg, eggNegaImg, arcImg];
       var i = 0;
       var tick = 0;
@@ -168,7 +167,7 @@ console.log(egg);
         var time2;
         eggc.clearRect(0, 0, w, h);
 
-        rad = tick * (Math.PI / 90) * 9 + egg.x;
+        rad = tick * (Math.PI / 270) * 9 + egg.x;
         var gravity = (150 * Math.sin(rad));
         if (0.9 - (tick * 0.05) > 0) {
 
@@ -200,7 +199,6 @@ console.log(egg);
       time1 = setTimeout(function(){
         time2 = setTimeout("clearInterval('"+setInterval(animation,40)+"')",3000);
       },0);
-    // });
   }
 
 
