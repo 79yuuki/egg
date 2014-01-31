@@ -148,6 +148,7 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
       var hitTick;
       eggc.globalAlpha = 1.0;
       if (egg.x < 0) { egg.x * -1; }
+      var rad;
 
 console.log(egg);
       var animation = function(){
@@ -158,7 +159,7 @@ console.log(egg);
         var time2;
         eggc.clearRect(0, 0, w, h);
 
-        var rad = tick * (Math.PI / 180) * 10 + egg.x;
+        rad = tick * (Math.PI / 180) * 10 + egg.x;
         if (0.9 - (tick * 0.05) > 0) {
 
           if (images[i] === arcImg) {
