@@ -181,13 +181,13 @@ console.log(egg);
           hitTick = tick;
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, h/2.5 - (200 * Math.sin(rad)), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
-          changeMe();
         } else {
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, hitHeight + (tick - hitTick), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
-           if ((hitTick / (tick - hitTick) * 1.2) - 0.5 <= 0) {
+           if ((hitTick / (tick - hitTick) * 1.2) - 0.5 === 0) {
              clearTimeout(time2);
              clearTimeout(time1);
+             changeMe();
            }
         }
         i++;
