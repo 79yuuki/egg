@@ -57,34 +57,27 @@ var drawMe = {
 	}
 };
 
-// function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
-// 	var posi = false;
-// 	var nega = false;
-// 	var clash = false;
-// 	eggPosiImg.onload = function(){posi = true;};
-// 	eggNegaImg.onload = function(){nega = true;};
-// 	clashEggImg.onload = function(){clash = true;};
-// 	while (posi === false || nega === false || clash === false) {
-// 		eggPosiImg.onload = function(){posi = true;};
-// 		eggNegaImg.onload = function(){nega = true;};
-// 		clashEggImg.onload = function(){clash = true;};
-// 	}
-
-// 	return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
-
-// }
 function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
-	clashEggImg.onload = function(){
-console.log('clash');
-	  eggPosiImg.onload = function(){
-console.log('posi');
-	    eggNegaImg.onload = function(){
-console.log('nega');
-	      return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
-	    };
-	  };
-	};
+ 	eggPosiImg.onload = function(){
+ 	  clashEggImg.onload = function(){};
+ 	  eggNegaImg.onload = function(){};
+ 	  return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
+    };
+
+
 }
+//function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
+//	clashEggImg.onload = function(){
+//console.log('clash');
+//	  eggPosiImg.onload = function(){
+//console.log('posi');
+//	    eggNegaImg.onload = function(){
+//console.log('nega');
+//	      return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
+//	    };
+//	  };
+//	};
+//}
   function createEggImage(positive){
     var img = new Image();
     if (positive) {
