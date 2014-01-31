@@ -181,17 +181,17 @@ console.log(images[i]);
         } else {
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, hitHeight + (tick - hitTick), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
-          if ((hitTick / (tick - hitTick) * 1.2) - 0.5 <= 0) {
-console.log('clear');
-            clearTimeout(time2);
-            clearTimeout(time1);
-          }
+//           if ((hitTick / (tick - hitTick) * 1.2) - 0.5 <= 0) {
+// console.log('clear');
+//             clearTimeout(time2);
+//             clearTimeout(time1);
+//           }
         }
         i++;
         tick++;
       };
       time1 = setTimeout(function(){
-        time2 = setTimeout("clearInterval('"+setInterval(animation,40)+"')",9000);
+        time2 = setTimeout("clearInterval('"+setInterval(animation,40)+"')",3000);
       },0);
     // });
   }
