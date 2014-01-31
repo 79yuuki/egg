@@ -159,6 +159,8 @@ console.log(images);
         }
         eggc.clearRect(0, 0, w, h);
 
+      var time1;
+      var time2;
         var rad = tick * (Math.PI / 180) * 10 + (egg.x * 0.3); // TODO ikioi egg.x
         if (0.9 - (tick * 0.05) > 0) {
 
@@ -188,8 +190,6 @@ console.log('clear');
         i++;
         tick++;
       };
-      var time1;
-      var time2;
       time1 = setTimeout(function(){
         time2 = setTimeout("clearInterval('"+setInterval(animation,40)+"')",9000);
       },0);
