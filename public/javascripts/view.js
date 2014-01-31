@@ -85,6 +85,7 @@ window.addEventListener("load", function(){
 
   // TODO set target. hit and change
   drawMe.geza1();
+  loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){});
   // drawMe.geza2();
   // drawMe.geza3();
   // drawMe.geza4();
@@ -100,7 +101,6 @@ console.log(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
   // throwEgg();
 
   s.on('throw', function(egg){
-console.log(egg);
     throwEgg(egg);
   });
 
