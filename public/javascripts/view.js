@@ -101,6 +101,7 @@ console.log(egg);
   });
 
   function throwEgg(egg){
+console.log('throw', egg);
     loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
       var images = [eggPosiImg, arcImg, eggNegaImg, arcImg];
 console.log(images);
