@@ -137,6 +137,13 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
 
   var images;
 
+  var me = 1;
+  function changeMe(){
+    c.clearRect(0, 0, w, h);
+    me++;
+    drawMe['geza'+me]();
+  }
+
   function throwEgg(egg){
     // loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
       images = [eggPosiImg, arcImg, eggNegaImg, arcImg];
@@ -180,6 +187,7 @@ console.log(egg);
            if ((hitTick / (tick - hitTick) * 1.2) - 0.5 <= 0) {
              clearTimeout(time2);
              clearTimeout(time1);
+             changeMe();
            }
         }
         i++;
