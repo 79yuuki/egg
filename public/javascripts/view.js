@@ -5,10 +5,10 @@ s.on('connect', function(msg) {
   console.log('connected');
 });
 
-s.on('throw', function(xyz) {
-  // debug
-  console.log(xyz);
-});
+// s.on('throw', function(xyz) {
+//   // debug
+//   console.log(xyz);
+// });
 
 var canvas = document.getElementById("main");
 var c = canvas.getContext("2d");
@@ -96,6 +96,7 @@ window.addEventListener("load", function(){
   // throwEgg();
 
   s.on('throw', function(egg){
+console.log(egg);
     throwEgg(egg);
   });
 
