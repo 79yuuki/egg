@@ -106,10 +106,12 @@ console.log(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
   // throwEgg();
 
 
+  var images;
+
   function throwEgg(egg){
 console.log('throw', egg);
     // loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
-      var images = [eggPosiImg, arcImg, eggNegaImg, arcImg];
+      images = [eggPosiImg, arcImg, eggNegaImg, arcImg];
 console.log(images);
       // var posiSize = eggPosiImg.width();
       var i = 0;
@@ -123,7 +125,7 @@ console.log(images);
         }
         eggc.clearRect(0, 0, w, h);
 
-        var rad = tick * (Math.PI / 180) * 10 + (egg.x * 0.1); // TODO ikioi egg.x
+        var rad = tick * (Math.PI / 180) * 10 + (egg.x * 0.3); // TODO ikioi egg.x
         if (0.9 - (tick * 0.05) > 0) {
 
           if (images[i] === arcImg) {
