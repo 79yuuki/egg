@@ -108,7 +108,7 @@ console.log(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
 
   function throwEgg(egg){
 console.log('throw', egg);
-    loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
+    // loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
       var images = [eggPosiImg, arcImg, eggNegaImg, arcImg];
 console.log(images);
       // var posiSize = eggPosiImg.width();
@@ -148,7 +148,7 @@ console.log(images);
       setTimeout(function(){
         setTimeout("clearInterval('"+setInterval(animation,40)+"')",9000);
       },0);
-    });
+    // });
   }
 
 
