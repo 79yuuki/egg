@@ -96,14 +96,15 @@ window.addEventListener("load", function(){
   var arcImg = createArcImage();
   var clashEggImg = createClashEggImage();
 
-loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){});
+loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
+  s.on('throw', function(egg){
+    throwEgg(egg);
+  });
+});
 
 console.log(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
   // throwEgg();
 
-  s.on('throw', function(egg){
-    throwEgg(egg);
-  });
 
   function throwEgg(egg){
 console.log('throw', egg);
