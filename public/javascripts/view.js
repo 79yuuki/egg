@@ -5,11 +5,6 @@ s.on('connect', function(msg) {
   console.log('connected');
 });
 
-// s.on('throw', function(xyz) {
-//   // debug
-//   console.log(xyz);
-// });
-
 var canvas = document.getElementById("main");
 var c = canvas.getContext("2d");
 var eggcanvas = document.getElementById("egg");
@@ -143,10 +138,8 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
   var images;
 
   function throwEgg(egg){
-console.log('throw', egg);
     // loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
       images = [eggPosiImg, arcImg, eggNegaImg, arcImg];
-console.log(images);
       // var posiSize = eggPosiImg.width();
       var i = 0;
       var tick = 0;
@@ -162,8 +155,7 @@ console.log(images);
 
       var time1;
       var time2;
-console.log(egg.x);
-        var rad = tick * (Math.PI / 180) * 10 + (egg.x * 0.01);
+        var rad = tick * (Math.PI / 180) * 10 + (egg.x * 0.08); // TODO ikioi egg.x
         if (0.9 - (tick * 0.05) > 0) {
 
           if (images[i] === arcImg) {
@@ -182,7 +174,6 @@ console.log(egg.x);
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, hitHeight + (tick - hitTick), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
            if ((hitTick / (tick - hitTick) * 1.2) - 0.5 <= 0) {
-console.log('clear');
              clearTimeout(time2);
              clearTimeout(time1);
            }
