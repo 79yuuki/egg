@@ -172,7 +172,7 @@ console.log(images[i]);
             eggc.drawImage(images[i], w/2.5 + (6 * tick), h/2.5 - (200 * Math.sin(rad)), images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
 
           }
-        } else if (0.9 - (tick * 0.05) === 0){
+        } /*else if (0.9 - (tick * 0.05) === 0){
           hitHeight = h/2.5 - (200 * Math.sin(rad));
           hitWidth = w/2.5 + (6 * tick);
           hitTick = tick;
@@ -186,7 +186,7 @@ console.log('clear');
 //             clearTimeout(time2);
 //             clearTimeout(time1);
 //           }
-        }
+        }*/
         i++;
         tick++;
       };
