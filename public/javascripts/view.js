@@ -74,14 +74,14 @@ var drawMe = {
 
 // }
 function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
-	eggPosiImg.onload = function(){
-console.log('posi');
-	  eggNegaImg.onload = function(){
-console.log('nega');
-	    clashEggImg.onload = function(){
+	clashEggImg.onload = function(){
 console.log('clash');
+	  eggPosiImg.onload = function(){
+console.log('posi');
+	    eggNegaImg.onload = function(){
+console.log('nega');
 	      return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
-	    }
+	    };
 	  };
 	};
 }
