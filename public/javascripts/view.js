@@ -163,7 +163,7 @@ console.log(images);
       var time1;
       var time2;
 console.log(egg.x);
-        var rad = tick * (Math.PI / 180) * 10 + (egg.x * 0.3); // TODO ikioi egg.x
+        var rad = tick * (Math.PI / 180) * 10 + (egg.x * 0.01);
         if (0.9 - (tick * 0.05) > 0) {
 
           if (images[i] === arcImg) {
