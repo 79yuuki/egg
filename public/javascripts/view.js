@@ -58,17 +58,33 @@ var drawMe = {
 };
 
 function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
-	eggPosiImg.onload = function(){
-console.log('posi');
-	  eggNegaImg.onload = function(){
-console.log('nega');
-	    clashEggImg.onload = function(){
-console.log('clash');
-	      return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
-	    }
-	  };
-	};
+	var posi = false;
+	var nega = false;
+	var clash = false;
+	eggPosiImg.onload = function(){posi = true;};
+	eggNegaImg.onload = function(){nega = true;};
+	clashEggImg.onload = function(){clash = true;};
+	while (posi === false && nega === false && clash === false) {
+		eggPosiImg.onload = function(){posi = true;};
+		eggNegaImg.onload = function(){nega = true;};
+		clashEggImg.onload = function(){clash = true;};
+	}
+
+	return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
+
 }
+// function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
+// 	eggPosiImg.onload = function(){
+// console.log('posi');
+// 	  eggNegaImg.onload = function(){
+// console.log('nega');
+// 	    clashEggImg.onload = function(){
+// console.log('clash');
+// 	      return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
+// 	    }
+// 	  };
+// 	};
+// }
   function createEggImage(positive){
     var img = new Image();
     if (positive) {
