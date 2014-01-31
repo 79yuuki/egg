@@ -64,7 +64,7 @@ function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
 	eggPosiImg.onload = function(){posi = true;};
 	eggNegaImg.onload = function(){nega = true;};
 	clashEggImg.onload = function(){clash = true;};
-	while (posi === false && nega === false && clash === false) {
+	while (posi === false || nega === false || clash === false) {
 		eggPosiImg.onload = function(){posi = true;};
 		eggNegaImg.onload = function(){nega = true;};
 		clashEggImg.onload = function(){clash = true;};
