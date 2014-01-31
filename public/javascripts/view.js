@@ -74,6 +74,46 @@ console.log('clash');
 	  };
 	};
 }
+  function createEggImage(positive){
+    var img = new Image();
+    if (positive) {
+      img.src = "../img/posiEgg.png";
+    } else {
+      img.src = "../img/negaEgg.png";
+    }
+    return img;
+  }
+
+
+  function createClashEggImage(positive){
+    var img = new Image();
+    img.src = "../img/clashEgg.png";
+
+    return img;
+  }
+
+
+  function createArcImage(){
+    var canvas = document.createElement('canvas');
+    canvas.width = 237;
+    canvas.height = 237;
+
+    var ctx = canvas.getContext('2d');
+    ctx.strokeStyle = "#AAA";
+    ctx.lineWidth = 15;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    ctx.arc(118, 119, 110, 0, Math.PI*2, false);
+    ctx.stroke();
+    ctx.fillStyle = "#FFF";
+    ctx.fill();
+
+    var img = new Image();
+    img.src = canvas.toDataURL('image/png');
+
+    return img;
+  }
 
   var eggPosiImg = createEggImage(true);
   var eggNegaImg = createEggImage(false);
@@ -100,14 +140,6 @@ window.addEventListener("load", function(){
   // drawMe.geza4();
   // drawMe.geza5();
   // drawMe.geza6();
-
-
-
-
-
-console.log(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
-  // throwEgg();
-
 
   var images;
 
@@ -157,46 +189,7 @@ console.log(images);
   }
 
 
-  function createEggImage(positive){
-    var img = new Image();
-    if (positive) {
-      img.src = "../img/posiEgg.png";
-    } else {
-      img.src = "../img/negaEgg.png";
-    }
-    return img;
-  }
 
-
-  function createClashEggImage(positive){
-    var img = new Image();
-    img.src = "../img/clashEgg.png";
-
-    return img;
-  }
-
-
-  function createArcImage(){
-    var canvas = document.createElement('canvas');
-    canvas.width = 237;
-    canvas.height = 237;
-
-    var ctx = canvas.getContext('2d');
-    ctx.strokeStyle = "#AAA";
-    ctx.lineWidth = 15;
-    ctx.lineJoin = "round";
-    ctx.lineCap = "round";
-    ctx.beginPath();
-    ctx.arc(118, 119, 110, 0, Math.PI*2, false);
-    ctx.stroke();
-    ctx.fillStyle = "#FFF";
-    ctx.fill();
-
-    var img = new Image();
-    img.src = canvas.toDataURL('image/png');
-
-    return img;
-  }
 
 
 }, false);
