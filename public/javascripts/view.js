@@ -126,7 +126,6 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
   });
 });
 
-window.addEventListener("load", function(){
 
   canvas.width = w;
   canvas.height = h;
@@ -192,4 +191,3 @@ console.log(images);
 
 
 
-}, false);
