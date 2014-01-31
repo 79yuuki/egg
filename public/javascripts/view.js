@@ -188,8 +188,10 @@ console.log('clear');
         i++;
         tick++;
       };
-      var time1 = setTimeout(function(){
-        var time2 = setTimeout("clearInterval('"+setInterval(animation,40)+"')",9000);
+      var time1;
+      var time2;
+      time1 = setTimeout(function(){
+        time2 = setTimeout("clearInterval('"+setInterval(animation,40)+"')",9000);
       },0);
     // });
   }
