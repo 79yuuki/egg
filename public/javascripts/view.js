@@ -144,7 +144,7 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
 
   function drawYoroshiku(){
     c.font = "20px sans-serif";
-    c.fillText('＼よろしくお願い致します！／', w/2-300, h/2 - 200);
+    c.fillText('＼よろしくお願い致します！／', w/2-150, h/2 - 200);
   }
 
   function throwEgg(egg){
@@ -168,7 +168,7 @@ console.log(egg);
         var time2;
         eggc.clearRect(0, 0, w, h);
 
-        rad = tick * (Math.PI / 180) * 15 + egg.x;
+        rad = tick * (Math.PI / 180) * 9 + egg.x;
         var gravity = (150 * Math.sin(rad));
         if (0.9 - (tick * 0.05) > 0) {
 
