@@ -167,7 +167,7 @@ console.log(egg);
         var time2;
         eggc.clearRect(0, 0, w, h);
 
-        rad = tick * (Math.PI / 180) * 10 + 0.01 * egg.x;
+        rad = tick * (Math.PI / 180) * 10 + 0.1 * egg.x;
         var gravity = (200 * Math.sin(rad));
         if (0.9 - (tick * 0.05) > 0) {
 
@@ -175,7 +175,6 @@ console.log(egg);
             eggc.drawImage(images[i], w/2.5 + (6 * tick), h/2.5 * 1.1 - gravity , images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
           } else {
             eggc.drawImage(images[i], w/2.5 + (6 * tick), h/2.5 - gravity, images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
-
           }
         } else if (0.9 - (tick * 0.05) === 0){
           hitHeight = h/2.5 - (200 * Math.sin(rad));
