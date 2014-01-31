@@ -167,7 +167,7 @@ console.log(egg);
         var time2;
         eggc.clearRect(0, 0, w, h);
 
-        rad = tick * (Math.PI / 180) * 10 + 0.01 * egg.x;
+        rad = tick * (Math.PI / 180) * 10 + 0.05 * egg.x;
         var gravity = (200 * Math.sin(rad));
         if (0.9 - (tick * 0.05) > 0) {
 
