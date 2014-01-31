@@ -96,6 +96,7 @@ window.addEventListener("load", function(){
   var arcImg = createArcImage();
   var clashEggImg = createClashEggImage();
 
+console.log(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
   // throwEgg();
 
   s.on('throw', function(egg){
