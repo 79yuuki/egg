@@ -75,6 +75,16 @@ console.log('clash');
 	};
 }
 
+  var eggPosiImg = createEggImage(true);
+  var eggNegaImg = createEggImage(false);
+  var arcImg = createArcImage();
+  var clashEggImg = createClashEggImage();
+
+loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
+  s.on('throw', function(egg){
+    throwEgg(egg);
+  });
+});
 
 window.addEventListener("load", function(){
 
@@ -91,16 +101,9 @@ window.addEventListener("load", function(){
   // drawMe.geza5();
   // drawMe.geza6();
 
-  var eggPosiImg = createEggImage(true);
-  var eggNegaImg = createEggImage(false);
-  var arcImg = createArcImage();
-  var clashEggImg = createClashEggImage();
 
-loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
-  s.on('throw', function(egg){
-    throwEgg(egg);
-  });
-});
+
+
 
 console.log(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
   // throwEgg();
