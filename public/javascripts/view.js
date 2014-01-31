@@ -162,14 +162,13 @@ console.log(images);
 
       var time1;
       var time2;
+console.log(egg.x);
         var rad = tick * (Math.PI / 180) * 10 + (egg.x * 0.3); // TODO ikioi egg.x
         if (0.9 - (tick * 0.05) > 0) {
 
           if (images[i] === arcImg) {
-console.log(images[i]);
             eggc.drawImage(images[i], w/2.5 + (6 * tick), h/2.5 * 1.1 - (200 * Math.sin(rad)), images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
           } else {
-console.log(images[i]);
             eggc.drawImage(images[i], w/2.5 + (6 * tick), h/2.5 - (200 * Math.sin(rad)), images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
 
           }
