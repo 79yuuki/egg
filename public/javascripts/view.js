@@ -133,9 +133,9 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
 
   var me = 1;
   function changeMe(){
-    c.clearRect(0, 0, w, h);
     me++;
     if (me < 7) {
+      c.clearRect(0, 0, w, h);
       drawMe['geza'+me]();
     } else {
       drawYoroshiku();
@@ -144,7 +144,7 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
 
   function drawYoroshiku(){
     c.font = "20px sans-serif";
-    c.fillText('＼よろしくお願い致します！／', w/2, h/2 - 200);
+    c.fillText('＼よろしくお願い致します！／', w/2-300, h/2 - 200);
   }
 
   function throwEgg(egg){
