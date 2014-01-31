@@ -144,7 +144,7 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
 
   function drawYoroshiku(){
     c.font = "20px sans-serif";
-    c.fillText('＼よろしくお願い致します！／', w/2-120, h/2 - 90);
+    c.fillText('＼よろしくお願い致します！／', w/2-140, h/2 - 90);
   }
 
   function throwEgg(egg){
