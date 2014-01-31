@@ -153,6 +153,7 @@ console.log(images);
       var hitWidth;
       var hitHeight;
       var hitTick;
+      eggc.globalAlpha = 1.0;
       var animation = function(){
         if (i === images.length) {
           i = 0;
@@ -172,7 +173,7 @@ console.log(images[i]);
             eggc.drawImage(images[i], w/2.5 + (6 * tick), h/2.5 - (200 * Math.sin(rad)), images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
 
           }
-        } /*else if (0.9 - (tick * 0.05) === 0){
+        } else if (0.9 - (tick * 0.05) === 0){
           hitHeight = h/2.5 - (200 * Math.sin(rad));
           hitWidth = w/2.5 + (6 * tick);
           hitTick = tick;
@@ -181,12 +182,12 @@ console.log(images[i]);
         } else {
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, hitHeight + (tick - hitTick), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
-//           if ((hitTick / (tick - hitTick) * 1.2) - 0.5 <= 0) {
+           if ((hitTick / (tick - hitTick) * 1.2) - 0.5 <= 0) {
 console.log('clear');
-//             clearTimeout(time2);
-//             clearTimeout(time1);
-//           }
-        }*/
+             clearTimeout(time2);
+             clearTimeout(time1);
+           }
+        }
         i++;
         tick++;
       };
