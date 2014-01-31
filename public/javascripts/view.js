@@ -58,13 +58,12 @@ var drawMe = {
 };
 
 function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
- 	eggPosiImg.onload = function(){
- 	  clashEggImg.onload = function(){};
- 	  eggNegaImg.onload = function(){};
- 	  return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
+  eggPosiImg.onload = function(){
+    clashEggImg.onload = function(){};
+    eggNegaImg.onload = function(){
+      return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
     };
-
-
+  };
 }
 //function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
 //	clashEggImg.onload = function(){
