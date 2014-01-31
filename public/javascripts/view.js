@@ -178,14 +178,16 @@ console.log(images);
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, hitHeight + (tick - hitTick), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
           if ((hitTick / (tick - hitTick) * 1.2) - 0.5 <= 0) {
-            clearTimeout(time);
+console.log(clear);
+            clearTimeout(time1);
+            clearTimeout(time2)
           }
         }
         i++;
         tick++;
       };
-      var time = setTimeout(function(){
-        setTimeout("clearInterval('"+setInterval(animation,40)+"')",9000);
+      var time1 = setTimeout(function(){
+        var time2 = setTimeout("clearInterval('"+setInterval(animation,40)+"')",9000);
       },0);
     // });
   }
