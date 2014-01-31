@@ -188,6 +188,7 @@ console.log(egg);
              // clearTimeout(time2);
              clearTimeout(time1);
              changeMe();
+             break;
            }
         }
         i++;
