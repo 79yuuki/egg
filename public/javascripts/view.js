@@ -167,7 +167,7 @@ console.log(egg);
         var time2;
         eggc.clearRect(0, 0, w, h);
 
-        rad = tick * (Math.PI / 180) * 10 + egg.x;
+        // rad = tick * (Math.PI / 180) * 10 + egg.x;
         if (0.9 - (tick * 0.05) > 0) {
 
           if (images[i] === arcImg) {
