@@ -64,8 +64,11 @@ var drawMe = {
 
 function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
 	eggPosiImg.onload = function(){
+console.log('posi');
 	  eggNegaImg.onload = function(){
+console.log('nega');
 	    clashEggImg.onload = function(){
+console.log('clash');
 	      return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
 	    }
 	  };
