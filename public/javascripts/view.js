@@ -156,6 +156,7 @@ loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
       eggc.globalAlpha = 1.0;
       if (egg.x < 0) { egg.x * -1; }
       var rad;
+      var once = true;
 
 console.log(egg);
       var animation = function(){
@@ -184,11 +185,11 @@ console.log(egg);
         } else {
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, hitHeight + (tick - hitTick), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
-           if ((hitTick / (tick - hitTick) * 1.2) - 0.5 < 0) {
+           if ((hitTick / (tick - hitTick) * 1.2) - 0.5 < 0 && once) {
              // clearTimeout(time2);
              clearTimeout(time1);
              changeMe();
-             break;
+             once = false;
            }
         }
         i++;
