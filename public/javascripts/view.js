@@ -57,6 +57,7 @@ var drawMe = {
 	}
 };
 
+(function(){
 function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
   eggPosiImg.onload = function(){
 console.log(eggPosiImg);
@@ -68,6 +69,7 @@ console.log(eggPosiImg);
     };
   };
 }
+})();
 //function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
 //	clashEggImg.onload = function(){
 //console.log('clash');
@@ -126,11 +128,11 @@ console.log(eggPosiImg);
   var arcImg = createArcImage();
   var clashEggImg = createClashEggImage();
 
-loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
+//loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
   s.on('throw', function(egg){
     throwEgg(egg);
   });
-});
+//});
 
   canvas.width = w;
   canvas.height = h;
