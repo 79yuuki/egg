@@ -1,5 +1,5 @@
-var socket = io.connect('http://bapa-egg.herokuapp.com');
-//var socket = io.connect('http://localhost:3000/');
+//var socket = io.connect('http://bapa-egg.herokuapp.com');
+var socket = io.connect('http://localhost:3000/');
 var s = socket.of('/socket');
 // s.on('connect', function(msg) {
 //   console.log('connected');
@@ -59,8 +59,11 @@ var drawMe = {
 
 function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
   eggPosiImg.onload = function(){
-    clashEggImg.onload = function(){};
+console.log(eggPosiImg);
+    clashEggImg.onload = function(){console.log(clashEggImg);};
     eggNegaImg.onload = function(){
+      console.log(eggNegaImg);
+      console.log(arcImg);
       return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
     };
   };
@@ -122,13 +125,14 @@ function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
   var eggNegaImg = createEggImage(false);
   var arcImg = createArcImage();
   var clashEggImg = createClashEggImage();
+  loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){});
 
-loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
-  s.on('throw', function(egg){
+s.on('throw', function(egg){
+  loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
     throwEgg(egg);
   });
-});
 
+});
 
   canvas.width = w;
   canvas.height = h;
