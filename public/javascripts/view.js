@@ -127,8 +127,8 @@ console.log(eggPosiImg);
   var clashEggImg = createClashEggImage();
   loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){});
 
-s.on('throw', function(egg){
-  loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
+loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
+  s.on('throw', function(egg){
     throwEgg(egg);
   });
 
