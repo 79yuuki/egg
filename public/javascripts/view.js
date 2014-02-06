@@ -142,8 +142,6 @@ console.log(eggPosiImg);
   eggcanvas.height = h;
 
   drawMe.geza1();
-  drawMe.geza4();
-  drawMe.geza6();
 
   var images;
 
