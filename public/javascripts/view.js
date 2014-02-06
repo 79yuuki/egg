@@ -143,6 +143,10 @@ console.log(eggPosiImg);
 
   drawMe.geza1();
 
+  // debug
+  // var teggx = 20;
+  // setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 3000);
+
   var images;
 
   var me = 1;
@@ -181,21 +185,23 @@ console.log(egg);
         var time2;
         eggc.clearRect(0, 0, w, h);
 
-        rad = tick * (Math.PI / 180) * 10 + 0.05 * egg.x;
-        var gravity = (200 * Math.sin(rad));
+        rad = tick * (Math.PI / 180) * 10;
+        var gravity = (180 * Math.sin(rad));
+        var eggHeight = h/1.3 - egg.x * 3;
+        var eggWidth = w/3;
         if (0.9 - (tick * 0.05) > 0) {
 
           if (images[i] === arcImg) {
-            eggc.drawImage(images[i], w/2.5 + (6 * tick), h/5 * 1.1 - gravity , images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
+            eggc.drawImage(images[i], eggWidth + (6 * tick), eggHeight * 1.1 - gravity , images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
           } else {
-            eggc.drawImage(images[i], w/2.5 + (6 * tick), h/5 - gravity, images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
+            eggc.drawImage(images[i], eggWidth + (6 * tick), eggHeight - gravity, images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
           }
         } else if (0.9 - (tick * 0.05) === 0){
-          hitHeight = h/5 - (200 * Math.sin(rad));
-          hitWidth = w/2.5 + (6 * tick);
+          hitHeight = eggHeight - (200 * Math.sin(rad));
+          hitWidth = eggWidth + (6 * tick);
           hitTick = tick;
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
-          eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, h/5 - gravity, clashEggImg.width * 0.2, clashEggImg.height * 0.2);
+          eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, eggHeight - gravity, clashEggImg.width * 0.2, clashEggImg.height * 0.2);
         } else {
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, hitHeight + (tick - hitTick), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
