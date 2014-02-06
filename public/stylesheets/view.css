@@ -14,7 +14,7 @@ h2 {font-size: 16px; color: #EEE;}
 #egg {width:700px; height:500px; position: absolute; z-index: 1;}
 
 #footer {background-color:#000; width: 100%; height: 70px;}
-#footer p {width:80%; color:#EEE; font-size: 12px; padding:15px; text-align: center;float:left;}
+#footer p {width:83%; color:#EEE; font-size: 12px; padding:15px; float:left;}
 #footer a {color:#EEE; text-decoration: none;}
 #footer a:hover {color:#888; text-decoration: none;}
 #footer img {width: 50px; float: right; padding:10px;}
