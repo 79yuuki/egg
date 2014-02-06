@@ -144,8 +144,8 @@ console.log(eggPosiImg);
   drawMe.geza1();
 
   // debug
-  // var teggx = 20;
-  // setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 3000);
+  var teggx = 20;
+  setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 3000);
 
   var images;
 
@@ -187,7 +187,7 @@ console.log(egg);
 
         rad = tick * (Math.PI / 180) * 10;
         var gravity = (180 * Math.sin(rad));
-        var eggHeight = h/1.3 - egg.x * 3;
+        var eggHeight = h/1.6 - egg.x * 2;
         var eggWidth = w/3;
         if (0.9 - (tick * 0.05) > 0) {
 
