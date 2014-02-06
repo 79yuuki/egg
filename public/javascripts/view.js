@@ -12,6 +12,8 @@ var eggc = eggcanvas.getContext("2d");
 var w = 700;
 var h = 500;
 
+$("#canvas").css('margin', (window.innerHeight / 2 - 320) + 'px 0px 0px -350px');
+
 var drawMe = {
 	geza1: function(){
 		var img = new Image();
