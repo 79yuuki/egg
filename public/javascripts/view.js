@@ -9,50 +9,50 @@ var canvas = document.getElementById("main");
 var c = canvas.getContext("2d");
 var eggcanvas = document.getElementById("egg");
 var eggc = eggcanvas.getContext("2d");
-var w = window.innerWidth;
-var h = window.innerHeight;
+var w = 700;
+var h = 500;
 
 var drawMe = {
 	geza1: function(){
 		var img = new Image();
 		img.src = "../img/geza1.png";
 		img.onload = function(){
-			c.drawImage(img, w/2-70, h/2-280, 140, 450);
+			c.drawImage(img, w/2-70, h/2-230, 140/1.3, 450/1.3);
 		};
 	},
 	geza2: function(){
 		var img = new Image();
 		img.src = "../img/geza2.png";
 		img.onload = function(){
-			c.drawImage(img, w/2-65, h/2-150, 131, 320);
+			c.drawImage(img, w/2-65, h/2-150, 131/1.3, 320/1.3);
 		};
 	},
 	geza3: function(){
 		var img = new Image();
 		img.src = "../img/geza3.png";
 		img.onload = function(){
-			c.drawImage(img, w/2-64, h/2-80, 129, 270);
+			c.drawImage(img, w/2-64, h/2-80, 129/1.3, 270/1.3);
 		};
 	},
 	geza4: function(){
 		var img = new Image();
 		img.src = "../img/geza4.png";
 		img.onload = function(){
-			c.drawImage(img, w/2-60, h/2-77, 119, 270);
+			c.drawImage(img, w/2-60, h/2-77, 119/1.3, 270/1.3);
 		};
 	},
 	geza5: function(){
 		var img = new Image();
 		img.src = "../img/geza5.png";
 		img.onload = function(){
-			c.drawImage(img, w/2-100, h/2-30, 201, 230);
+			c.drawImage(img, w/2-100, h/2-30, 201/1.3, 230/1.3);
 		};
 	},
 	geza6: function(){
 		var img = new Image();
 		img.src = "../img/geza6.png";
 		img.onload = function(){
-			c.drawImage(img, w/2-130, h/2+20, 260, 190);
+			c.drawImage(img, w/2-130, h/2+20, 260/1.3, 190/1.3);
 		};
 	}
 };
@@ -140,6 +140,8 @@ console.log(eggPosiImg);
   eggcanvas.height = h;
 
   drawMe.geza1();
+  drawMe.geza4();
+  drawMe.geza6();
 
   var images;
 
