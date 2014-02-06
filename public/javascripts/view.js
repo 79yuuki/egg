@@ -144,8 +144,8 @@ console.log(eggPosiImg);
   drawMe.geza1();
 
   // debug
-  var teggx = 20;
-  setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 3000);
+  // var teggx = 20;
+  // setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 3000);
 
   var images;
 
