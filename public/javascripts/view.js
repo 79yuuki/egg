@@ -186,16 +186,16 @@ console.log(egg);
         if (0.9 - (tick * 0.05) > 0) {
 
           if (images[i] === arcImg) {
-            eggc.drawImage(images[i], w/2.5 + (6 * tick), h * 1.1 - gravity , images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
+            eggc.drawImage(images[i], w/2.5 + (6 * tick), h/3 * 1.1 - gravity , images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
           } else {
-            eggc.drawImage(images[i], w/2.5 + (6 * tick), h - gravity, images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
+            eggc.drawImage(images[i], w/2.5 + (6 * tick), h/3 - gravity, images[i].width * (0.9 - (tick * 0.05)), images[i].height * (0.9 - (tick * 0.05)));
           }
         } else if (0.9 - (tick * 0.05) === 0){
-          hitHeight = h - (200 * Math.sin(rad));
+          hitHeight = h/3 - (200 * Math.sin(rad));
           hitWidth = w/2.5 + (6 * tick);
           hitTick = tick;
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
-          eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, h - gravity, clashEggImg.width * 0.2, clashEggImg.height * 0.2);
+          eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, h/3 - gravity, clashEggImg.width * 0.2, clashEggImg.height * 0.2);
         } else {
           eggc.globalAlpha = (hitTick / (tick - hitTick) * 1.2) - 0.5;
           eggc.drawImage(clashEggImg, hitWidth - clashEggImg.width* 0.2 / 2, hitHeight + (tick - hitTick), clashEggImg.width * 0.2, clashEggImg.height * 0.2);
