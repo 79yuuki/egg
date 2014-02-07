@@ -14,7 +14,7 @@ var h = 500;
 
 $("#canvas").css('margin', (window.innerHeight / 2 - 320) + 'px 0px 0px -350px');
 
-var drawMe = {
+var oldDrawMe = {
 	geza1: function(){
 		var img = new Image();
 		img.src = "../img/geza1.png";
@@ -59,31 +59,28 @@ var drawMe = {
 	}
 };
 
-(function(){
-function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
-  eggPosiImg.onload = function(){
-console.log(eggPosiImg);
-    clashEggImg.onload = function(){console.log(clashEggImg);};
-    eggNegaImg.onload = function(){
-      console.log(eggNegaImg);
-      console.log(arcImg);
-      return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
-    };
+var drawMe = function(num){
+  var img = new Image();
+  img.src = "../img/geza"+num+".png";
+  img.onload = function(){
+    c.drawImage(img, w/2 - 120, h/2- 200, 240, 327);
   };
-}
+};
+
+(function(){
+  function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
+    eggPosiImg.onload = function(){
+  // console.log(eggPosiImg);
+      clashEggImg.onload = function(){console.log(clashEggImg);};
+      eggNegaImg.onload = function(){
+        // console.log(eggNegaImg);
+        // console.log(arcImg);
+        return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
+      };
+    };
+  }
 })();
-//function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
-//	clashEggImg.onload = function(){
-//console.log('clash');
-//	  eggPosiImg.onload = function(){
-//console.log('posi');
-//	    eggNegaImg.onload = function(){
-//console.log('nega');
-//	      return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
-//	    };
-//	  };
-//	};
-//}
+
   function createEggImage(positive){
     var img = new Image();
     if (positive) {
@@ -141,20 +138,20 @@ console.log(eggPosiImg);
   eggcanvas.width = w;
   eggcanvas.height = h;
 
-  drawMe.geza1();
+  drawMe(1);
 
   // debug
-  // var teggx = 20;
-  // setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 3000);
+  var teggx = 20;
+  setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 3000);
 
   var images;
 
   var me = 1;
   function changeMe(){
     me++;
-    if (me < 7) {
+    if (me < 15) {
       c.clearRect(0, 0, w, h);
-      drawMe['geza'+me]();
+      drawMe(me);
     } else {
       drawYoroshiku();
     }
