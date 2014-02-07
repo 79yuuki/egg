@@ -70,11 +70,8 @@ var drawMe = function(num){
 (function(){
   function loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, callback){
     eggPosiImg.onload = function(){
-  // console.log(eggPosiImg);
       clashEggImg.onload = function(){console.log(clashEggImg);};
       eggNegaImg.onload = function(){
-        // console.log(eggNegaImg);
-        // console.log(arcImg);
         return callback(eggPosiImg, eggNegaImg, arcImg, clashEggImg);
       };
     };
@@ -91,14 +88,11 @@ var drawMe = function(num){
     return img;
   }
 
-
   function createClashEggImage(positive){
     var img = new Image();
     img.src = "../img/clashEgg.png";
-
     return img;
   }
-
 
   function createArcImage(){
     var canvas = document.createElement('canvas');
@@ -127,11 +121,9 @@ var drawMe = function(num){
   var arcImg = createArcImage();
   var clashEggImg = createClashEggImage();
 
-//loadImages(eggPosiImg, eggNegaImg, arcImg, clashEggImg, function(){
   s.on('throw', function(egg){
     throwEgg(egg);
   });
-//});
 
   canvas.width = w;
   canvas.height = h;
@@ -141,15 +133,15 @@ var drawMe = function(num){
   drawMe(1);
 
   // debug
-  // var teggx = 20;
-  // setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 3000);
+  var teggx = 20;
+  setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 1000);
 
   var images;
 
   var me = 1;
   function changeMe(){
     me++;
-    if (me < 15) {
+    if (me < 11) {
       c.clearRect(0, 0, w, h);
       drawMe(me);
     } else {
@@ -157,9 +149,14 @@ var drawMe = function(num){
     }
   }
 
+  var randomText = [{text: '＼よろしくお願い致します！／', point: w/2-140},
+                    {text: '＼何卒！／', point: w/2-47},
+                    {text: '＼痛っ／', point: w/2-45}];
   function drawYoroshiku(){
+    c.clearRect(0, h/2 - 125, w, 45);
     c.font = "20px sans-serif";
-    c.fillText('＼よろしくお願い致します！／', w/2-140, h/2 - 90);
+    var random = Math.floor(Math.random() * 3);
+    c.fillText(randomText[random].text, randomText[random].point, h/2 - 90);
   }
 
   function throwEgg(egg){
@@ -173,7 +170,6 @@ var drawMe = function(num){
       var rad;
       var once = true;
 
-console.log(egg);
       var animation = function(){
         if (i === images.length) {
           i = 0;

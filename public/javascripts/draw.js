@@ -8,7 +8,6 @@ s.on('connect', function() {
 
 window.addEventListener("load", function () {
 
-  // 必要な変数を宣言しておく
   var canvas = document.getElementById("main");
   var c = canvas.getContext("2d");
   var w = $('body').width();
@@ -19,7 +18,6 @@ window.addEventListener("load", function () {
   var oldPos;
   var throwFlag = false;
 
-  // CanvasとContextを初期化する
   canvas.width = w;
   canvas.height = h;
   c.strokeStyle = "#AAA";
@@ -27,31 +25,24 @@ window.addEventListener("load", function () {
   c.lineJoin = "round";
   c.lineCap = "round";
 
-  // タップ開始時に、絵を描く準備をする
   canvas.addEventListener("touchstart", function (event) {
     drawing = true;
     lineLocus[locusNum] = getPosT(event);
   }, false);
 
-  // タップ終了時に、絵を描く後処理を行う
   canvas.addEventListener("touchend", function () {
     drawing = false;
   }, false);
 
-  // gestureイベント（２本指以上で触ると発生するやつ）の
-  // 終了時にも絵を描く後処理を行う
   canvas.addEventListener("gestureend", function () {
     console.log("mouseout");
     drawing = false;
   }, false);
 
-  // 実際に絵を描く処理
-  // 前回に保存した位置から現在の位置迄線を引く
   canvas.addEventListener("touchmove", function (event) {
     var pos = getPosT(event);
     if (drawing) {
       oldPos = lineLocus[locusNum];
-// console.log(oldPos);
       c.beginPath();
       c.moveTo(oldPos.x, oldPos.y);
       c.lineTo(pos.x, pos.y);
@@ -60,7 +51,6 @@ window.addEventListener("load", function () {
       if (crossCheck(oldPos, pos)) {
         c.clearRect(0, 0, $(canvas).width(), $(canvas).height());
         getCircleData(function(err, top, height){
-           // drawEgg({ x: top.y, y: -top.x }, height);
            vibe(top, height);
         });
         throwFlag = true;
@@ -68,11 +58,10 @@ window.addEventListener("load", function () {
       locusNum++;
       lineLocus[locusNum] = pos;
 
-//console.log(lineLocus[locusNum]);
     }
   }, false);
 
-  function vibe(top, height){//a:したいこと,s:開始時間,e:終了時間,f:更新間隔時間
+  function vibe(top, height){
     var maxH = height + 6;
     var rate = 1.0;
     var animation = function(){
@@ -159,7 +148,6 @@ window.addEventListener("load", function () {
     return callback(null, top, height);
   }
 
-
   /**
    * draw egg
    */
@@ -181,23 +169,18 @@ window.addEventListener("load", function () {
     var yy = [];
 
     a = height;
-    // b = 2.8;
-    // b = 0.7 * a;
     b = 0.7 * a;
 
-    xmax = a; // x の最大値
-    dx = xmax / 350; // x のプロット間隔
+    xmax = a;
+    dx = xmax / 350;
 
     i=0;
 
     for (x = 0; x <= xmax; x = x + dx) {
       i++;
-
       xx[i] = x;
       y = Math.sqrt(((a - b - 2 * x) + Math.sqrt(4 * b * x + (a - b) * (a - b))) * x / 2);
       yy[i] = y;
-
-      // console.log("i = "+i+", x = "+x+", y = "+ y);
     }
 
     imax = i;
@@ -221,13 +204,8 @@ window.addEventListener("load", function () {
       c.stroke();
       c.closePath();
     }
-
   }
 
-
-
-
-  // タップ位置を取得する為の関数群
   function scrollX(){return document.documentElement.scrollLeft || document.body.scrollLeft;}
   function scrollY(){return document.documentElement.scrollTop || document.body.scrollTop;}
 
@@ -237,7 +215,6 @@ window.addEventListener("load", function () {
     return {x:mouseX, y:mouseY};
   }
 
-  // 削除ボタンの動作
   $("delete_button").click(function () {
     c.clearRect(0, 0, $(canvas).width(), $(canvas).height());
   });
