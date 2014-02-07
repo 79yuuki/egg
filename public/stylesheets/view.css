@@ -24,6 +24,14 @@ h2 {font-size: 16px; color: #EEE;}
 .modalBK{position: fixed; z-index:999; height:100%; width:100%;background:#555; opacity: 0.9;filter: alpha(opacity=90);-moz-opacity:0.90; margin-top: -140px;}
 .close{cursor: pointer;}
 .modal{width:690px; color: #eee;}
-.modal p{font-size:12px; text-align:justify;}
+.modal p{font-size:11px; text-align:justify;}
 .modal h1{font-weight:bold; font-size: 30px;}
 .modalBody{padding: 10px;}
+
+.box {float: left; width:33%;}
+.box p {padding: 11px;}
+.tutorialBox {width:100%; height: 300px; margin: 10px;}
+
+#startBtn {text-align: center; background-color: #9370db;width:100px; height: 45px;}
+.start {display: table-cell; width: 690px; height: 45px; vertical-align: middle; text-align: center;}
+.start p {display: inline-block; text-align: center; background-color: #9370db; padding: 10px 20px;}
