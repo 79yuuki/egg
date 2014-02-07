@@ -133,8 +133,8 @@ var drawMe = function(num){
   drawMe(1);
 
   // debug
-  var teggx = 20;
-  setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 1000);
+  // var teggx = 20;
+  // setInterval(function(){throwEgg({x: teggx}); teggx += 5}, 1000);
 
   var images;
 
